@@ -56,10 +56,10 @@ public class Wireframe3D {
             return path;
         }
 
-        path.getElements().add(new MoveTo());
+        path.getElements().add(translatedWireframe.getEdgeTable().get(0).raycastToMoveToA(focalLength));
 
         for(Edge edge : translatedWireframe.getEdgeTable()){
-            //TODO implement
+            path.getElements().add(edge.raycastToLineToB(focalLength));
         }
 
         return path;
